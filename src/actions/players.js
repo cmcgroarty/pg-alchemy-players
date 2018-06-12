@@ -19,7 +19,15 @@ export const createPlayer = player => {
 		}
 	});
 };
-export const deletePlayer = id => {};
+export const deletePlayer = id => {
+  fetch(''+id, {method: 'DELETE'}).then(response => {
+    if(response.success){
+      this.playerDeleted(id);
+    } else {
+      setError(response.error);
+    }
+  })
+};
 export const playersFetched = players => ({type:types.PLAYERS_FETCHED, players:players});
 export const playerCreated = player => ({type:types.PLAYER_CREATED, player: player});
 export const playerDeleted = id => ({type:types.PLAYER_DELETED, id: id});
