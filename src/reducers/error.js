@@ -8,5 +8,7 @@ export default function error(state = initialState, action){
 			return {display:true, message:action.error.message};
 		case types.CLEAR_ERROR:
 			return {display:false, message:''};
+		default:
+			return state;
 	}
 }

@@ -8,6 +8,8 @@ export default function users(state=initialState, action){
 			return action.users;
 		case types.USER_CREATED:
 			return [...state, action.user];
+		default:
+			return state;
 	}
 }
 

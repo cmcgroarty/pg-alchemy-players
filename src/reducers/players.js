@@ -10,6 +10,8 @@ export default function players(state=initialState, action){
 			return [...state, action.player];
 		case types.PLAYER_DELETED:
 			return state.filter(player => player.id !== action.id);
+		default:
+			return state;
 	}
 }
 

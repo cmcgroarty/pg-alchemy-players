@@ -11,5 +11,7 @@ export default function auth( state = initialState, action ) {
 			return { user: action.user, token: action.token };
 		case types.LOGOUT:
 			return initialState;
+		default:
+			return state;
 	}
 }
