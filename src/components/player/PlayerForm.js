@@ -15,6 +15,10 @@ export default class PlayerForm extends Component {
     this.handleChange = this.handleChange.bind(this)
   }
 
+  componentWillMount () {
+    this.props.actions.clearError()
+  }
+
   handleChange (event) {
     this.setState({ [ event.target.name ]: event.target.value })
   }
@@ -44,5 +48,5 @@ export default class PlayerForm extends Component {
 }
 
 PlayerForm.propTypes = {
-  actions: PropTypes.objectOf(PropTypes.func)
+  actions: PropTypes.objectOf(PropTypes.func).isRequired
 }

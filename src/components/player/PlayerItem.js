@@ -2,10 +2,9 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 export default class PlayerItem extends Component {
-
   handleDelete (id) {
     this.props.actions.deletePlayer(id)
-  };
+  }
 
   render () {
     const { player } = this.props
@@ -24,6 +23,6 @@ export default class PlayerItem extends Component {
 }
 
 PlayerItem.propTypes = {
-  player: PropTypes.object,
-  actions: PropTypes.objectOf(PropTypes.func)
+  player: PropTypes.object.isRequired,
+  actions: PropTypes.objectOf(PropTypes.func).isRequired
 }
