@@ -1,0 +1,2 @@
+export const SET_CALLOUT = 'SET_CALLOUT'
+export const CLEAR_CALLOUT = 'CLEAR_CALLOUT'
