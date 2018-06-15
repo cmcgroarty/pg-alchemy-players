@@ -13,10 +13,6 @@ class LoginPage extends React.Component {
     this.handleChange = this.handleChange.bind(this)
   }
 
-  static propTypes = {
-    attemptLogin: PropTypes.func.isRequired
-  }
-
   handleLogin () {
     this.props.attemptLogin(this.state)
   }
@@ -28,21 +24,25 @@ class LoginPage extends React.Component {
   render () {
     const { auth } = this.props
     let goToPlayers = ''
-    if(auth.token) {
+    if (auth.token) {
       goToPlayers = <Link to='/player' className='button secondary'>Manage Players</Link>
     }
     return (
       <form>
-          <input type='email' placeholder='Email' name='email' onChange={this.handleChange} />
+        <input type='email' placeholder='Email' name='email' onChange={this.handleChange} />
 
-          <input type='password' placeholder='Password' name='password' onChange={this.handleChange} />
+        <input type='password' placeholder='Password' name='password' onChange={this.handleChange} />
 
-          <button type='button' className='button' onClick={() => this.handleLogin()}>Login</button>
-          <Link to='/user/create' className='button secondary'>Create a User</Link>
-          {goToPlayers}
+        <button type='button' className='button' onClick={() => this.handleLogin()}>Login</button>
+        <Link to='/user/create' className='button secondary'>Create a User</Link>
+        {goToPlayers}
       </form>
     )
   }
+}
+
+LoginPage.propTypes = {
+  attemptLogin: PropTypes.func.isRequired,
 }
 
 export default LoginPage
