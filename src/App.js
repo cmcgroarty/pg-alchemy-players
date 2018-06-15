@@ -1,21 +1,32 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import { Route, Switch } from 'react-router'
+
+
+import './App.css'
+import Login from './containers/Login'
+import Players from './containers/Players'
+import User from './containers/User'
+import CalloutDisplay from './components/CalloutDisplay'
 
 class App extends Component {
-  render() {
+  render () {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <CalloutDisplay />
+        <div className='grid-container'>
+          <div className='grid-x'>
+            <div className='cell'>
+              <Switch>
+                <Route path='/user' component={User} />
+                <Route path='/player' component={Players} />
+                <Route path='/' component={Login} />
+              </Switch>
+            </div>
+          </div>
+        </div>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
