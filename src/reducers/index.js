@@ -2,13 +2,13 @@ import {combineReducers} from 'redux'
 import users from './users'
 import players from './players'
 import auth from './auth'
-import error from './error'
+import callout from './callout'
 
 const rootReducer = combineReducers({
   users,
   players,
   auth,
-  error
+  callout
 })
 
 export default rootReducer
